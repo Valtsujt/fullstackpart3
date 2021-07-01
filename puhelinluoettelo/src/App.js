@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import personsService from './services/persons'
+import personsService from './services/persons';
 const PersonForm = (props) => {
     return (
         <form onSubmit={props.hb}>
