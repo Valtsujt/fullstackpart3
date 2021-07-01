@@ -102,8 +102,9 @@ const App = () => {
                                 }, 5000)
                             }
                             ).catch(error => {
+                                console.log(typeof(error))
                                 setErrorMessage(
-                                    `'${newName}' was already removed from server`
+                                    error
                                 )
                                 setTimeout(() => {
                                     setErrorMessage(null)
@@ -126,8 +127,10 @@ const App = () => {
                             }, 5000)
                         }
                         ).catch(error => {
+                            console.log(error)
+                            console.log(typeof(error))
                             setErrorMessage(
-                                `'${newName}' was already removed from server`
+                                error
                             )
                             setTimeout(() => {
                                 setErrorMessage(null)
@@ -155,8 +158,13 @@ const App = () => {
                     setMessage(null)
                 }, 5000)
             }).catch(error => {
+                console.log("error", error)
+                console.log(error.error)
+                console.log(error.response)
+                console.log(error.response.data.error)
+                console.log(typeof(error))
                 setErrorMessage(
-                    `'${newName}' was already removed from server`
+                    error.response.data.error
                 )
                 setTimeout(() => {
                     setErrorMessage(null)
